@@ -3,7 +3,7 @@ import std.conv : to;
 import std.string : toStringz;
 import core.stdc.string : strncpy;
 
-extern (C) int demangle_symbol(const(char)* c_name, char* buffer, int size)
+extern (C) int demangle_symbol(const(char)* c_name, char* buffer, size_t size)
 {
         const auto name = to!string(c_name);
         auto demangled = demangle(name);
